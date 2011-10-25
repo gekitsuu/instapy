@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: instapy
+Version: 0.1dev
+Summary: Python Library for instapaper.com API
+Home-page: http://gekitsuu.org
+Author: Adam Glenn
+Author-email: gekitsuu@gmail.com
+License: BSD
+Description: UNKNOWN
+Keywords: instapaper
+Platform: UNKNOWN

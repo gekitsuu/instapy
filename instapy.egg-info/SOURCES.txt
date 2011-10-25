@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+instapy/__init__.py
+instapy.egg-info/PKG-INFO
+instapy.egg-info/SOURCES.txt
+instapy.egg-info/dependency_links.txt
+instapy.egg-info/entry_points.txt
+instapy.egg-info/not-zip-safe
+instapy.egg-info/top_level.txt
