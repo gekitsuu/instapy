@@ -8,6 +8,6 @@ Example
 
 from instapy.simple import SimpleAPI
 
-a = SimpleAPI()
-a.auth('username', 'password')
-a.create_article('http://example.com')
+    a = SimpleAPI() 
+    a.auth('username', 'password')
+    a.create_article('http://example.com')
