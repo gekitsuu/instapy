@@ -6,6 +6,9 @@ class AuthError(Exception):
 	def __init__(self, error_message):
 		self.parameter = error_message
 	
+	def __repr__(self):
+		return self.parameter
+
 	def __str__(self):
 		return repr(self.paramtere)
 
@@ -21,16 +24,42 @@ class SimpleAPI():
 		
 		response = urllib2.urlopen('https://www.instapaper.com/api/authenticate', data)
 
-		if response.getcode() == 200:
+		status = response.getcode()
+
+		if status == 200:
 			self.auth_status = "Authenticated"
-		elif response.getcode() == 403:
+		elif status == 403:
 			self.auth_status = "Invalide username or password"
-		elif response.getcode() == 500:
+		elif status == 500:
 			self.auth_status = "The service encountered an error. Please try again later"
 
 	def create_article(self, url, title=None, selection=None, redirect=None, jsonp=None):
 		if self.auth_status != "Authenticated":
 			raise AuthError("Not currently authenticated")
-			return
 		
+		datadict = {
+				'username': self.username,
+				'password': self.password,
+				'url': url
+			}
+
+		if title is not None: data['title'] = title
+		if selection is not None: data['selection'] = selection
+		if redirect is not None: data['redirect'] = redirect
+		if jsonp is not None: data['jsonp'] = jsonp
+
+		data = urllib.urlencode(datadict)
+		response = urllib2.urlopen("https://www.instapaper.com/api/add", data)
+
+		status = response.getcode()
+
+		if status == 201:
+			pass
+		elif status == 400:
+			pass
+		elif status == 403:
+			raise AuthError("Invalid username or password.")
+		elif status == 500:
+			pass	
 		
+
