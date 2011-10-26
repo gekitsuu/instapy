@@ -6,4 +6,8 @@ This is a python library to give access to instapaper's simple API but in the fu
 Example
 -------
 
-I Will be an example
+from instapy.simple import SimpleAPI
+
+a = SimpleAPI()
+a.auth('username', 'password')
+a.create_article('http://example.com')
