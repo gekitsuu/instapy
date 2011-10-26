@@ -1,6 +1,7 @@
 setup.cfg
 setup.py
 instapy/__init__.py
+instapy/simple.py
 instapy.egg-info/PKG-INFO
 instapy.egg-info/SOURCES.txt
 instapy.egg-info/dependency_links.txt
